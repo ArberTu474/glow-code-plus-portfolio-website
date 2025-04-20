@@ -1,12 +1,14 @@
 :root {
   --clr-primary: #3ecda5;
+  --clr-primary-transparent: #3ecda46e;
   --clr-secondary: #4d5bce;
 
   --clr-background: #011627;
+  --clr-background-transparent: #01162798;
 
   --clr-text: #e5e9f0;
   --clr-text-dark: #1a160f;
-  --clr-text-dimmer: #5d7993;
+  --clr-text-dimmer: #7d93a9;
 }
 
 /* jetbrains-mono */
@@ -88,6 +90,11 @@ li {
 
 nav {
   border-bottom: 1px solid var(--clr-text-dimmer);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(16px);
+  background-color: var(--clr-background-transparent);
 }
 
 .logo {
@@ -111,22 +118,16 @@ nav {
   border-bottom: 4px solid transparent;
 }
 
-.links a .selected {
-  padding: 1em 2em;
-  border-left: 1px solid var(--clr-text-dimmer);
-  border-right: 1px solid var(--clr-text-dimmer);
-  border-bottom: 4px solid transparent;
-}
-
 .links a:hover {
   border-bottom: 4px solid var(--clr-primary);
   color: var(--clr-text);
 }
 
 .hero {
+  height: 90%;
   display: flex;
   flex-direction: column;
-  margin: 20rem auto;
+  justify-content: center;
 }
 
 .hero-greeting {
@@ -140,7 +141,7 @@ nav {
 }
 
 .hero-job {
-  font-size: 2em;
+  font-size: 2rem;
   color: var(--clr-primary);
   font-weight: 500;
   margin-bottom: 1.5em;
@@ -197,7 +198,7 @@ nav {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 2rem;
-  
+
   width: 100%;
 }
 
@@ -205,6 +206,15 @@ nav {
   background-color: var(--clr-background);
   border: 1px solid var(--clr-text-dimmer);
   width: 100%;
+  transition: 300ms;
+}
+
+.card:hover {
+  transform: translateY(-15px);
+
+  .card-header {
+    background-color: var(--clr-primary-transparent);
+  }
 }
 
 .card-header {
@@ -214,6 +224,7 @@ nav {
 
   padding: 1em 1em;
   border-bottom: 1px solid var(--clr-text-dimmer);
+  transition: 300ms;
 }
 
 .card-content {
@@ -300,6 +311,32 @@ footer p {
 }
 
 @media screen and (max-width: 750px) {
+  .links a {
+    padding: 0.6em 1em;
+  }
+
+  /* --------------------------------------- */
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .hero-greeting {
+    font-size: 1em;
+  }
+
+  .hero-name {
+    font-size: 2.2rem;
+  }
+
+  .hero-job {
+    font-size: 1.2rem;
+  }
+
+  .circle {
+    opacity: 0.5;
+  }
+
   .cards {
     grid-template-columns: 1fr;
   }
