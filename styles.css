@@ -40,11 +40,30 @@ a {
 
 p {
   max-width: 80ch;
+  color: var(--clr-text-dimmer);
 }
 
 li {
   margin-left: 1em;
   margin-bottom: 0.2em;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+input,
+textarea {
+  max-width: 38rem;
+  padding: 1em;
+  margin-bottom: 1rem;
+  font-size: 1.15em;
+
+  color: var(--clr-text);
+  background-color: var(--clr-background);
+  border: 1px solid var(--clr-text-dimmer);
+  width: 100%;
 }
 
 .icon {
@@ -361,4 +380,18 @@ footer p {
   .line {
     display: none;
   }
+}
+
+/* --------------------------------------------- */
+
+.submit-button {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.submit-button:hover {
+  background-color: var(--clr-primary);
+  border-color: var(--clr-primary);
+  color: var(--clr-background);
+  transition: 300ms;
 }

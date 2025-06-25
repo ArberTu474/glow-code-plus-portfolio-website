@@ -10,9 +10,9 @@
     <nav>
       <div class="container">
         <div class="links">
-          <a href="/">_hello</a>
-          <a href="#skills">_about-me</a>
+          <a href="#skills">_about_me</a>
           <a href="#projects">_projects</a>
+          <a href="#contact-us">_contact_us</a>
         </div>
       </div>
     </nav>
@@ -42,7 +42,7 @@
         <!------------------------------ Skills Description ------------------------------>
         <div class="skills-header">
           <h2 class="title">About me</h2>
-          <p class="paragraph">
+          <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid,
             nobis
           </p>
@@ -152,7 +152,7 @@
         <!------------------------------ Projects Description ------------------------------>
         <div class="skills-header">
           <h2 class="title">My Projects</h2>
-          <p class="paragraph">
+          <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid,
             nobis! Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Aliquid, nobis!
@@ -273,11 +273,53 @@
       </div>
     </section>
 
+    <!------------------------------ Contact Us ------------------------------>
+    <section class="section" id="contact-us">
+      <div class="container">
+        <!------------------------------ Contact Us Description ------------------------------>
+        <div class="skills-header">
+          <h2 class="title">Contact Us</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid,
+            nobis
+          </p>
+        </div>
+
+        <form id="contact-us-form">
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" />
+
+          <label for="email">Email</label>
+          <input type="email" name="emial" id="emial" />
+
+          <label for="email">Message</label>
+          <textarea name="message" id="mssage" rows="10"></textarea>
+
+          <input class="submit-button" type="submit" value="Send" />
+        </form>
+      </div>
+    </section>
+
     <!------------------------------ Footer ------------------------------>
     <section>
       <footer>
-        <p class="paragraph">GLOW Code Plus • 2025</p>
+        <p>GLOW Code Plus • 2025</p>
       </footer>
     </section>
+
+    <script>
+      const form = document.getElementById('contact-us-form')
+      const nameField = document.getElementById('name')
+
+      form.addEventListener('submit', (e) => {
+        console.log(name)
+        e.preventDefault()
+        window.alert(
+          nameField.value + ' your message was delivered successfuly!'
+        )
+
+        form.reset()
+      })
+    </script>
   </body>
 </html>
